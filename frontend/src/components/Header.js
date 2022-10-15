@@ -18,20 +18,39 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="liht" variant="light" className="navBarContainer" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Pro Shop</Navbar.Brand>
+            
+            <Navbar.Brand>Pro Shoppy</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Route render={({ history }) => <SearchBox history={history} />} />
+
+            {/* cards */}
             <Nav className="ml-auto">
-              <LinkContainer to="/cart">
+
+              {/* this is me */}
+              <LinkContainer to="/desire">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Cart
+                  <i className="fas fa-shopping-cart"></i> Хүсэл
                 </Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/wallet">
+                <Nav.Link>
+                  <i className="fas fa-shopping-cart"></i> Хэтэвч
+                </Nav.Link>
+              </LinkContainer>
+
+              {/* this is end */}
+
+              <LinkContainer to="/cart">
+                <Nav.Link>
+                  <i className="fas fa-shopping-cart"></i> Сагс
+                </Nav.Link>
+              </LinkContainer>
+
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
@@ -44,7 +63,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to="/login">
                   <Nav.Link>
-                    <i className="fas fa-user"></i> Sign In
+                    <i className="fas fa-user"></i> Нэвтрэх
                   </Nav.Link>
                 </LinkContainer>
               )}
