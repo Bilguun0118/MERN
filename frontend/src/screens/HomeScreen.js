@@ -31,10 +31,10 @@ const HomeScreen = ({ match }) => {
         <ProductCarousel />
       ) : (
         <Link to='/' className='btn btn-light'>
-          Go Backs
+          Go Back
         </Link>
       )}
-      <h1>Latest Products IS componentsssss</h1>
+      <h1>Latest Products IS component</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -43,7 +43,7 @@ const HomeScreen = ({ match }) => {
         <>
           <Row>
             {products.map((product) => (
-              <Col key={product._id} sm={120} md={6} lg={4} xl={3}>
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>
             ))}

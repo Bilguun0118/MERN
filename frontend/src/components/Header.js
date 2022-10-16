@@ -1,10 +1,10 @@
 import React from "react";
+import SearchBox from "./SearchBox";
 import { Route } from "react-router-dom";
+import { logout } from "../actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import SearchBox from "./SearchBox";
-import { logout } from "../actions/userActions";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -18,28 +18,37 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="liht" variant="light" className="navBarContainer" expand="lg" collapseOnSelect>
+      <Navbar
+        bg="liht"
+        variant="light"
+        className="navBarContainer"
+        expand="lg"
+        collapseOnSelect
+      >
         <Container>
           <LinkContainer to="/">
-            
             <Navbar.Brand>Pro Shoppy</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
+
+
+
             <Route render={({ history }) => <SearchBox history={history} />} />
 
             {/* cards */}
             <Nav className="ml-auto">
-
               {/* this is me */}
+
               <LinkContainer to="/desire">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Хүсэл
+                  <i className="fas fa-heart"></i> Хүсэл
                 </Nav.Link>
               </LinkContainer>
+              
               <LinkContainer to="/wallet">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Хэтэвч
+                  <i className="fas fa-wallet"></i> Хэтэвч
                 </Nav.Link>
               </LinkContainer>
 
